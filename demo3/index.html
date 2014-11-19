@@ -7,12 +7,16 @@
 </head>
 <body ng-app="Demo">
 
-<div class="container" ng-controller="MainCtrl">
-	<!-- <div class="form-group">
-	    <input type="text" ng-model="search" placeholder="Search">
-	</div> -->
+<div ng-controller="MainCtrl">
+    <!-- Will look through this collection and instantly filter it down to things that match -->
+    <!-- As soon as the search model changes, it is going to strip out the filter below accordingly -->
+	  <input type="text" ng-model="search" placeholder="Search">
 
 	<ul>
+      <!-- put ng-repeat on the actual element that you want to repeat -->
+      <!-- We're going to take the <li> tag and repeat it each time through -->
+      <!-- Within the tag, we get access to the properties of user within the curly brackets -->
+      <!-- Filter can capitalize each property, or append a $, etc. -->
 	    <li ng-repeat="user in users | filter:search">{{ user.first_name }} {{ user.last_name }}</li>
 	</ul>
 </div>

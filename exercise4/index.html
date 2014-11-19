@@ -3,11 +3,42 @@
 <head>
 <meta charset="utf-8">
 <title>Angular Exercise 4</title>
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 <script src="bower_components/angular/angular.js"></script>
 </head>
-<body>
+<body ng-app="Demo">
 
 <p>Take the code from demo 3 and add an age field for each user. Set it up so that you can define the age when you create a user.</p>
+
+<div class="container" ng-controller="MainCtrl">
+
+  <ul>
+    <li ng-repeat="item in items">
+      {{ item.qty }} unit(s) of {{ item.name }} will cost {{ item.price | currency}}
+    </li>
+  </ul>
+
+  <form role="form" name="createItemsForm" ng-submit="createItems(item)" novalidate>
+    <br>
+    <div class="form-group">
+      <label for="name">Item Name</label>
+      <input type="text" class="form-control" id="name" ng-model="item.name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="qty">Item Quantity</label>
+      <input type="number" ng-model="item.qty" required>
+      <label for="price">Total Price</label>
+      <input type="number" ng-model="item.price" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-disabled="createItemsForm.$invalid">Submit</button>
+  </form>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="js/app.js"></script>
+
 
 </body>
 </html>

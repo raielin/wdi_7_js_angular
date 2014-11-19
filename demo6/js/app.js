@@ -14,11 +14,16 @@ angular.module('Demo').controller('MainCtrl', function($scope, $http) {
     		user: user
     	};
 
-    	$http.post('http://localhost:3000/users', params).success(function(response) {
-            $scope.users.push(response);
+        if (user.id) {
+            $http.put('http://localhost:3000/users' + user.id, params);
+        } else {
+            $http.post('http://localhost:3000/users', params).success(function(response) {
+                $scope.users.push(response);
+            });
+        }
 
-            $scope.user = {};
-        });
+        $scope.user = {};
+
     };
 
     $scope.deleteUser = function(user) {

@@ -18,8 +18,15 @@
 </head>
 <body ng-app="Demo">
 
+<!-- For headers, footers, sidebar, we want to include on all 'pages' so we use ng-include. -->
+<!-- Convention is to put these templates in a partials directory, but could go anywhere. -->
+<!-- NOTE: MUST use double-quotes and then single-quotes -->
 <ng-include src="'templates/partials/navbar.html'"></ng-include>
 
+<!-- Angular gives us this functionality. Will replace the contents within the ng-view tag  -->
+<!-- with the templates. -->
+<!-- All of the URL stuff changes after the hash, which means the browser doesn't -->
+<!-- Have to reload every time. -->
 <ng-view></ng-view>
 
 <script src="bower_components/jquery/dist/jquery.js"></script>

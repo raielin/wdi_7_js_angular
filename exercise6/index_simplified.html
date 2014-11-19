@@ -3,16 +3,13 @@
 <head>
 <meta charset="utf-8">
 <title>Angular Exercise 6</title>
-<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 <script src="bower_components/angular/angular.js"></script>
 </head>
 <body ng-app="Demo">
 
-<h1>Users</h1>
-
 <p>Add in create, update, and destroy functionality for skills</p>
 
-<div class="container" ng-controller="MainCtrl">
+<div ng-controller="MainCtrl">
 
   <ul>
     <li ng-repeat="skill in skills">
@@ -20,17 +17,20 @@
     </li>
   </ul>
 
-  <h2>Add a Skill</h2>
+  <h1>Add a Skill</h1>
   <!-- ng-submit is defining the function that we're calling when we submit the form -->
-  <form role="form" name="createSkillsForm" ng-submit="createSkills(skill)" novalidate>
+  <!-- Removed validation tags and form name -->
+  <!-- Only a form tag triggers an event. A button wouldn't. -->
+  <form ng-submit="createSkills(skill)">
     <br>
-    <div class="form-group">
-      <label for="name">Skill Name</label>
+    <div>
+      <label>Skill Name</label>
       <!-- ng-model here is associated with $scope.skill in the Angular controller -->
-      <input type="text" class="form-control" id="name" ng-model="skill.name" required>
+      <input type="text" ng-model="skill.name">
     </div>
 
-    <button type="submit" class="btn btn-primary" ng-disabled="createSkillsForm.$invalid">Submit</button>
+    <button type="submit">Submit</button>
+    <!-- could also do ng-click="createSkills(skill)" in button element instead of ng-submit in form element -->
   </form>
 
 <!--   <h1>Delete a Skill</h1>
@@ -51,7 +51,6 @@
 </div>
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

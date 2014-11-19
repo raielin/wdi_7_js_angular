@@ -5,6 +5,8 @@ angular.module('Demo', []);
 angular.module('Demo').controller('MainCtrl', function($scope) {
     'use strict';
 
+    // Users is an array of objects.
+    // Every user here is a javascript object.
     $scope.users = [{
         first_name: 'dan',
         last_name: 'johnson'

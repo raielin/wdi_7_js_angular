@@ -5,8 +5,13 @@
 <title>Angular Demo 2</title>
 <script src="bower_components/angular/angular.js"></script>
 </head>
+<!-- Demo is an Angular module -->
+<!-- Also have a JS file now. -->
 <body ng-app="Demo">
 
+<!-- We give this div and this div alone a controller. -->
+<!-- For all the code within this div look to this controller for all the content. -->
+<!-- This controller is within the Demo module. -->
 <div class="container" ng-controller="MainCtrl">
     <h1>{{ greeting }} {{ person.firstName }} {{ person.lastName }}</h1>
 

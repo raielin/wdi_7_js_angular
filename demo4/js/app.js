@@ -18,5 +18,10 @@ angular.module('Demo').controller('MainCtrl', function($scope) {
 
     $scope.createUser = function(user) {
         $scope.users.push(user);
+
+        // Once we've added a user, we will set $scope.user to an empty object to reset it.
+        $scope.user = {};
     };
+
+    // NOTHING PERSISTS HERE. Reloading page resets all the values.
 });

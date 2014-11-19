@@ -5,18 +5,35 @@
 <title>Angular Demo 1</title>
 <script src="bower_components/angular/angular.js"></script>
 </head>
+<!-- ng-app says that this is an angular app. -->
+<!-- Will now go through and run angular stuff. -->
+<!-- This becomes the template -->
+<!-- Allows us to have expressions in HTML -->
 <body ng-app>
 
 <!-- bind an expression -->
 <h1>Welcome {{ 1 + 1 }}</h1>
 
 <!-- bind to a property on the scope object -->
+<!-- A scope object is something your view has access to, to interact with data -->
+<!-- Can later be bound to a controller -->
+<!-- It's a bucket for all of your stuff. -->
+<!-- You can use things before you define it. Angular evaulates the whole file first before running it. -->
+<!-- Realistically this would all be done -->
 <h1>Welcome {{ person.name }}</h1>
 
 <!-- populate the person object on the scope object using ng-init directive -->
+<!-- Initializes some data in that scope object. -->
+<!-- There's no way to see this object, it's hidden right now. Angular gives it to you. -->
+<!-- Removing it doesn't give an error, it just doesn't render b/c it doesn't know what it is. -->
 <h1 ng-init="person = {name: 'dan'}">Welcome {{ person.name }}</h1>
 
+<!-- This would override 'dan'. -->
+<!-- <h1 ng-init="person = {name: 'joe'}">Welcome {{ person.name }}</h1> -->
+
 <!-- input bound to a property on the scope using ng-model directive -->
+<!-- Angular objectives: ng-model, ng-app, ng-init. Gives HTML more ability to do things. -->
+<!-- Angular comes built with 2-way data mining. -->
 <p><input type="text" ng-model="person.name"></p>
 
 </body>
