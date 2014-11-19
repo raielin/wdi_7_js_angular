@@ -1,5 +1,12 @@
 // Karma configuration
 // Generated on Wed Nov 19 2014 08:06:57 GMT-0500 (EST)
+// Karma is a test tool built by people who built AngularJS
+// http://karma-runner.github.io/0.12/index.html
+// Fires up browsers, runs those tests in those browsers and
+// then shuts it down.
+// Can use chrome, firefox, or phantomJS
+// PhantomJS is way faster, runs in your terminal
+// http://phantomjs.org/
 
 module.exports = function(config) {
   config.set({
@@ -57,15 +64,17 @@ module.exports = function(config) {
 
 
     // start these browsers
+    // can do multiple browsers at the same time
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS', 'Chrome'],
 
 
     // load plugins
     plugins: [
         'karma-phantomjs-launcher',
         'karma-jasmine',
-        'karma-spec-reporter'
+        'karma-spec-reporter',
+        'karma-chrome-launcher'
     ],
 
 

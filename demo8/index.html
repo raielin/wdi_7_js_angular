@@ -7,7 +7,28 @@
 </head>
 <body ng-app="Demo">
 
-{{ 'angular is fun' | capitalize }}
+<!-- FILTERS -->
+
+<!-- capitalize is the filter we built. -->
+<!-- filters always come after the pipe. -->
+<!-- Angular looks at capitalize, finds the function that filter returns, -->
+<!-- and runs that function on the parameter (whatever precedes the pipe). -->
+<!-- <p>{{ 'angular is fun' | capitalize }}</p>
+
+<p>{{ 'rabbits are randomly rascally' | elmer }}</p>
+<p>{{ 'squirrels sometimes say silly sentences' | daffy }}</p>
+<p>{{ 'squirrels sometimes say silly sentences' | reverseDaffy }}</p> -->
+
+<!-- write a filter with functions that uses ROT13 encoding. a = n, b = m, etc. -->
+
+<div ng-controller="DafCtrl">
+  Enter a sentence to translate: <input type="text" ng-model="AngString">
+  <p>Elmerfied: {{ AngString | elmer }}</p>
+  <p>Daffified: {{ AngString | daffy }}</p>
+  <p>Reverse Daffified: {{ AngString | reverseDaffy }}</p>
+  <p>Reverse Elmerfied: {{ AngString | reverseElmer }}</p>
+</div>
+
 
 <script src="js/app.js"></script>
 
