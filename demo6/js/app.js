@@ -9,13 +9,13 @@ angular.module('Demo').controller('MainCtrl', function($scope, $http) {
         $scope.users = response;
     });
 
-    $scope.createUser = function(user) {
-    	var params = {
-    		user: user
-    	};
+    $scope.upsertUser = function(user) {
+        var params = {
+            user: user
+        };
 
         if (user.id) {
-            $http.put('http://localhost:3000/users' + user.id, params);
+            $http.put('http://localhost:3000/users/' + user.id, params);
         } else {
             $http.post('http://localhost:3000/users', params).success(function(response) {
                 $scope.users.push(response);
@@ -23,7 +23,10 @@ angular.module('Demo').controller('MainCtrl', function($scope, $http) {
         }
 
         $scope.user = {};
+    };
 
+    $scope.editUser = function(user) {
+        $scope.user = user;
     };
 
     $scope.deleteUser = function(user) {

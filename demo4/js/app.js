@@ -19,7 +19,10 @@ angular.module('Demo').controller('MainCtrl', function($scope) {
     $scope.createUser = function(user) {
         $scope.users.push(user);
 
+<<<<<<< HEAD
         // Once we've added a user, we will set $scope.user to an empty object to reset it.
+=======
+>>>>>>> 3a821d7380c0c1e54619cc13524c113a2fd04aeb
         $scope.user = {};
     };
 
